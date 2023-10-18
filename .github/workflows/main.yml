@@ -10,6 +10,8 @@ jobs:
     name: "hello"
     runs-on: ubuntu-latest
     steps:
+      - name: checkout 
+        uses: actions/checkout@master
       - name: 'zs'
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -18,9 +20,11 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script:
+            node -v
             cd /www/apk
-            git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
+            git clone https://github.com/jiatingyu/yibei-express-jkgl.git
             cd ./yibei-express-jkgl
-            yarn build
-            yarn start
+            npm install 
+            npm run build
+            npm run start
              
