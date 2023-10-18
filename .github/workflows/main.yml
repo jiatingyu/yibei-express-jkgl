@@ -22,10 +22,7 @@ jobs:
           script: |
             node -v
             cd /
-            ls -al
-            
-      - name: "serve"
-        run: |
+            ls -l
             cd /www/apk/
             git clone https://github.com/jiatingyu/yibei-express-jkgl.git
             cd ./yibei-express-jkgl
