@@ -26,9 +26,9 @@ jobs:
             cd /www/apk/
             git clone https://github.com/jiatingyu/yibei-express-jkgl.git
             cd /www/apk/yibei-express-jkgl
-            npm install
-            npm run build
-            npm run start
+            yarn
+            yarn build
+            yarn start
       - name: '测试位置'
         run: | 
           uname -a 
