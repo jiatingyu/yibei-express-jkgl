@@ -2,7 +2,7 @@ Arguments:
   E:\install\dev\nodejs\node.exe e:\install\nodejs\node_global\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  C:\Users\ADMINI~1\AppData\Local\Temp\yarn--1697611529947-0.6999446234128619;G:\lerna-jkgl\node_modules\yibei-express-jkgl\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\Data\link\node_modules\.bin;E:\install\dev\libexec\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\ADMINI~1\AppData\Local\Temp\yarn--1697611487266-0.2318515525737752;G:\lerna-jkgl\node_modules\yibei-express-jkgl\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\Data\link\node_modules\.bin;G:\lerna-jkgl\node_modules\.bin;E:\install\dev\libexec\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\nodejs\node_modules\npm\bin\node-gyp-bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;E:\install\Git\cmd;e:\install\nodejs\node_global;E:\install\Microsoft VS Code\bin;C:\Program Files\nodejs;E:\install\dev\nvm;E:\install\dev\nodejs;E:\install\flutter\bin;E:\install\jdk\jdk1.8.0_65\bin;E:\install\nodejs\node_global;e:\install\nodejs\node_global\bin;E:\install\vscode\Code.exe;E:\install\nodejs\yarn_global;E:\install\nodejs\yarn_global\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\install\vscode\bin;e:\install\nodejs\node_global\node_modules;E:\install\AndroidSDK\platform-tools;E:\install\AndroidSDK\emulator;E:\install\AndroidSDK\tools;E:\install\AndroidSDK\tools\bin;E:\install\MongoDB\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;D:\install\rclone-v1.58.1;E:\install\7-Zip;C:\Users\Administrator\.windows-build-tools\python27\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;F:\install\Microsoft VS Code\bin
+  C:\Users\ADMINI~1\AppData\Local\Temp\yarn--1697613396503-0.4391287813537843;G:\lerna-jkgl\node_modules\yibei-express-jkgl\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\Data\link\node_modules\.bin;E:\install\dev\libexec\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\ADMINI~1\AppData\Local\Temp\yarn--1697613390687-0.08313108807200953;G:\lerna-jkgl\node_modules\yibei-express-jkgl\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\Data\link\node_modules\.bin;G:\lerna-jkgl\node_modules\.bin;E:\install\dev\libexec\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\lib\node_modules\npm\bin\node-gyp-bin;E:\install\dev\nodejs\node_modules\npm\bin\node-gyp-bin;e:\install\nodejs\node_cache\_npx\7ef27be80482e586\node_modules\.bin;G:\lerna-jkgl\packages\express-jkgl\node_modules\.bin;G:\lerna-jkgl\packages\node_modules\.bin;G:\lerna-jkgl\node_modules\.bin;G:\node_modules\.bin;e:\install\nodejs\node_global\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;E:\install\Git\cmd;e:\install\nodejs\node_global;E:\install\Microsoft VS Code\bin;C:\Program Files\nodejs;E:\install\dev\nvm;E:\install\dev\nodejs;E:\install\flutter\bin;E:\install\jdk\jdk1.8.0_65\bin;E:\install\nodejs\node_global;e:\install\nodejs\node_global\bin;E:\install\vscode\Code.exe;E:\install\nodejs\yarn_global;E:\install\nodejs\yarn_global\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\install\vscode\bin;e:\install\nodejs\node_global\node_modules;E:\install\AndroidSDK\platform-tools;E:\install\AndroidSDK\emulator;E:\install\AndroidSDK\tools;E:\install\AndroidSDK\tools\bin;E:\install\MongoDB\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;D:\install\rclone-v1.58.1;E:\install\7-Zip;C:\Users\Administrator\.windows-build-tools\python27\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;F:\install\Microsoft VS Code\bin
 
 Yarn version: 
   1.22.19
@@ -54,13 +54,20 @@ npm manifest:
       "tsc": "tsc",
       "init": "tsc --init",
       "eslint:init": "eslint init",
-      "prepare": "husky install"
+      "prepare": "husky install",
+      "lint": "lint-staged"
     },
     "dependencies": {
       "cors": "^2.8.5",
       "express": "^4.18.2",
       "express-async-errors": "^3.1.1",
       "typescript": "^5.2.2"
+    },
+    "lint-staged": {
+      "*.{ts,js}": [
+        "prettier --write",
+        "eslint --fix"
+      ]
     },
     "devDependencies": {
       "@types/express": "^4.17.20",
