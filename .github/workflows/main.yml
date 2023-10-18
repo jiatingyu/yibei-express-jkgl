@@ -23,7 +23,7 @@ jobs:
             node -v
             
       - name: "serve"
-        run:
+        run: |
             cd /www/apk
             git clone https://github.com/jiatingyu/yibei-express-jkgl.git
             cd ./yibei-express-jkgl
