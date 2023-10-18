@@ -21,11 +21,10 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             node -v
-            cd /
-            ls -l
+            rm -rf /www/apk/yibei-express-jkgl
             cd /www/apk/
             git clone https://github.com/jiatingyu/yibei-express-jkgl.git
-            cd ./yibei-express-jkgl
+            cd /www/apk/yibei-express-jkgl
             npm install
             npm run build
             npm run start
