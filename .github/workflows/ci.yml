@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     setps:
       name: checkout
-      use: actions/checkout@v2
+      uses: actions/checkout@v2
 
       name: Deploy
-      use: appleboy/ssh-action@v1.0.0
+      uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
