@@ -19,10 +19,10 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: whoami
-      run:
-        cd /www/apk
-        git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
-        cd ./yibei-express-jkgl
-        yarn build
-        yarn start
+        script:
+          whoami
+          cd /www/apk
+          git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
+          cd ./yibei-express-jkgl
+          yarn build
+          yarn start
