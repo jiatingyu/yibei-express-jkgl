@@ -12,11 +12,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@master
-
-      - name: build
-        run: |
-          npm install
-          npm run build
+        
       - name: 'connect linux'
         uses: appleboy/ssh-action@v1.0.0
         with:
