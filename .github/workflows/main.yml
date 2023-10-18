@@ -29,3 +29,7 @@ jobs:
             npm install
             npm run build
             npm run start
+      - name: '测试位置'
+        run: | 
+          uname -a 
+          ls -al
