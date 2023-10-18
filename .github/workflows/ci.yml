@@ -2,27 +2,26 @@ name: '自动发布'
 on:
   push:
     branches:
-      - master
+    - master
 
 jobs:
   pullCode:
-    name: centos
-    runs-on: ubuntu-latest
-    steps:
-      name: checkout
-      uses: actions/checkout@v2
-
-      name: Deploy
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script:
-          whoami
-          cd /www/apk
-          git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
-          cd ./yibei-express-jkgl
-          yarn build
-          yarn start
+			name: centos
+			runs-on: ubuntu-latest
+			steps:
+				uses: actions/checkout@v2
+				name: checkout
+				uses: appleboy/ssh-action@v1.0.0
+				name: deploy
+				with:
+					host: ${{ secrets.HOST }}
+					username: ${{ secrets.USERNAME }}
+					password: ${{ secrets.PASSWORD }}
+					port: ${{ secrets.PORT }}
+					script: 
+						whoami
+						cd /www/apk
+						git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
+						cd ./yibei-express-jkgl
+						yarn build
+						yarn start
