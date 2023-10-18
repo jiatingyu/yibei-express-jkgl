@@ -19,8 +19,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script:
+          script: |
             node -v
+            whoami
+            ls -al
             
       - name: "serve"
         run: |
