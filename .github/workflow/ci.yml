@@ -1,0 +1,28 @@
+name: '自动发布'
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  pullCode:
+    name: centos
+    runs-on: ubuntu-latest
+    setps:
+      name: checkout
+      use: actions/checkout@v2
+
+      name: Deploy
+      use: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
+      run:
+        cd /www/apk
+        git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
+        cd ./yibei-express-jkgl
+        yarn build
+        yarn start
