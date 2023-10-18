@@ -21,12 +21,12 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             node -v
-            whoami
+            cd /
             ls -al
             
       - name: "serve"
         run: |
-            cd /www/apk
+            cd /www/apk/
             git clone https://github.com/jiatingyu/yibei-express-jkgl.git
             cd ./yibei-express-jkgl
             npm install
