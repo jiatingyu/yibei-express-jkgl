@@ -1,4 +1,4 @@
-name: "ceshi"
+name: "测试发布"
 on:
   push:
     branches:
@@ -7,12 +7,12 @@ on:
 
 jobs:
   hello:
-    name: "hello"
+    name: "deploy"
     runs-on: ubuntu-latest
     steps:
-      - name: checkout 
+      - name: checkout
         uses: actions/checkout@master
-      - name: 'zs'
+      - name: 'connect linux'
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
@@ -24,7 +24,6 @@ jobs:
             cd /www/apk
             git clone https://github.com/jiatingyu/yibei-express-jkgl.git
             cd ./yibei-express-jkgl
-            npm install 
+            npm install
             npm run build
             npm run start
-             
