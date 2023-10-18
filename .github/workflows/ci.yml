@@ -11,15 +11,14 @@ jobs:
     steps:
       - name: checkout
       - uses: actions/checkout@v2
-
-      - name: deploy
-      - uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script:
+            whoami
             cd /www/apk
             git clone  https://github.com/jiatingyu/yibei-express-jkgl.git
             cd ./yibei-express-jkgl
