@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@master
-      - name: build
-        uses: actions/setup-node@master
       - name: Build
         uses: actions/setup-node@master
-        run: |
+        with:
+          node-version: 16.14.0
+      - run: |
           npm install
           npm run build
           zip --junk-paths yibei-express-jkgl dist
