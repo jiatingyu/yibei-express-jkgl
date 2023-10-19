@@ -24,7 +24,6 @@ jobs:
       - run: |
           yarn
           yarn build
-          cd dist
           ls -al
           zip yibei-express-jkgl dist package.json ecosystem.config.js
       # - name: Create Release
