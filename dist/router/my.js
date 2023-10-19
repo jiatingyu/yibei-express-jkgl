@@ -57,22 +57,25 @@ var response_1 = __importDefault(require("../interceptor/response"));
 var userModel_1 = __importDefault(require("../model/userModel"));
 var myRouter = express_1.default.Router();
 var http = axios_1.default.create({
-    baseURL: "http://localhost:3000",
-    timeout: 3000,
+    baseURL: 'http://localhost:3000',
+    timeout: 3000
 });
 http.interceptors.response.use(response_1.default);
-myRouter.get("/getList", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+myRouter.get('/getList', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var resData;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                console.log("req,", req.query);
-                return [4 /*yield*/, http.get("/", {
-                        headers: { access_token: req.query.token },
+                console.log('req,', req.query);
+                return [4 /*yield*/, http.get('/', {
+                        headers: { access_token: req.query.token }
                     })];
             case 1:
                 resData = _a.sent();
                 res.json(__assign(__assign({}, userModel_1.default), resData)).end();
+                return [4 /*yield*/, Promise.resolve()];
+            case 2:
+                _a.sent();
                 return [2 /*return*/];
         }
     });
