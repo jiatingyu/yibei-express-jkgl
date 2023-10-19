@@ -20,7 +20,8 @@ jobs:
       - run: |
           yarn
           yarn build
-          zip --junk-paths yibei-express-jkgl dist
+      - run: ls -al
+      - run: zip --junk-paths yibei-express-jkgl ./dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
