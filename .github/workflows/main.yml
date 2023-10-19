@@ -9,6 +9,7 @@ on:
 jobs:
   hello:
     name: "deploy"
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: checkout
