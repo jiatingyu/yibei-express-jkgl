@@ -74,5 +74,6 @@ jobs:
             cd /www/apk/
             rm -rf /www/apk/yibei-express-jkgl
             unzip ./yibei-express-jkgl.zip -d yibei-express-jkgl
+            cd ./yibei-express-jkgl
             yarn
             yarn start
