@@ -5,7 +5,7 @@ import 'express-async-errors'
 import myRouter from './router/my'
 import cors from 'cors'
 const host = '127.0.0.1'
-const port = 3000
+const port = 8686
 const app = express()
 
 app.use(cors())
