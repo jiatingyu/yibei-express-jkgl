@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 16.14.0
       - run: |
-          npm install
-          npm run build
+          yarn
+          yarn build
           zip --junk-paths yibei-express-jkgl dist
       - name: Create Release
         id: create_release
