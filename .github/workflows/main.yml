@@ -25,7 +25,7 @@ jobs:
           yarn
           yarn build
           ls -al
-          zip yibei-express-jkgl dist package.json ecosystem.config.js
+          zip -r yibei-express-jkgl dist package.json ecosystem.config.js
       # - name: Create Release
       #   id: create_release
       #   uses: actions/create-release@v1
@@ -63,19 +63,16 @@ jobs:
       #       mv dist yibei-express-jkgl
       #       cd ./yibei-express-jkgl
       #       yarn start
-      # - name: 'connect linux'
-      #   uses: appleboy/ssh-action@v1.0.0
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     port: ${{ secrets.PORT }}
-      #     script: |
-      #       node -v
-      #       rm -rf /www/apk/yibei-express-jkgl
-      #       cd /www/apk/
-      #       git clone https://github.com/jiatingyu/yibei-express-jkgl.git
-      #       cd /www/apk/yibei-express-jkgl
-      #       yarn
-      #       yarn build
-      #       yarn start
+      - name: 'connect linux'
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /www/apk/
+            rm -rf /www/apk/yibei-express-jkgl
+            unzip ./yibei-express-jkgl.zip -d yibei-express-jkgl
+            yarn
+            yarn start
