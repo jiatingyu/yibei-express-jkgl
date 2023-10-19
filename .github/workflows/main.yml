@@ -13,6 +13,14 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@master
+      - name: build
+        uses: actions/setup-node@master
+      - name: Build
+        uses: actions/setup-node@master
+        run: |
+          npm install
+          npm run build
+          zip --junk-paths yibei-express-jkgl dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
