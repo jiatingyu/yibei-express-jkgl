@@ -54,6 +54,6 @@ jobs:
       #       yarn build
       #       yarn start
       # - name: '测试位置'
-        run: | 
-          uname -a 
-          ls -al
+        # run: | 
+        #   uname -a 
+        #   ls -al
