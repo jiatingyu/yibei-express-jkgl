@@ -21,8 +21,11 @@ jobs:
       - run: |
           yarn
           yarn build
-      - run: ls -al
-      - run: zip yibei-express-jkgl ./dist
+          cd dist
+          ls -al
+          cd ../
+          ls -al
+          zip yibei-express-jkgl dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -53,6 +56,13 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           source: "./yibei-express-jkgl.zip"
           target: "/www/apk/"
+
+      # - name: run
+      #   run: |
+      #       unzip yibei-express-jkgl.zip
+      #       mv dist yibei-express-jkgl
+      #       cd ./yibei-express-jkgl
+      #       yarn start
       # - name: 'connect linux'
       #   uses: appleboy/ssh-action@v1.0.0
       #   with:
