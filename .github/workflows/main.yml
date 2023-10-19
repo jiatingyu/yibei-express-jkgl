@@ -43,19 +43,29 @@ jobs:
           asset_path: ./yibei-express-jkgl.zip
           asset_name: yibei-express-jkgl.zip
           asset_content_type: application/zip
-      - name: 'connect linux'
-        uses: appleboy/ssh-action@v1.0.0
+
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: |
-            node -v
-            rm -rf /www/apk/yibei-express-jkgl
-            cd /www/apk/
-            git clone https://github.com/jiatingyu/yibei-express-jkgl.git
-            cd /www/apk/yibei-express-jkgl
-            yarn
-            yarn build
-            yarn start
+          key: ${{ secrets.KEY }}
+          source: "./yibei-express-jkgl.zip"
+          target: "/www/apk/"
+      # - name: 'connect linux'
+      #   uses: appleboy/ssh-action@v1.0.0
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     port: ${{ secrets.PORT }}
+      #     script: |
+      #       node -v
+      #       rm -rf /www/apk/yibei-express-jkgl
+      #       cd /www/apk/
+      #       git clone https://github.com/jiatingyu/yibei-express-jkgl.git
+      #       cd /www/apk/yibei-express-jkgl
+      #       yarn
+      #       yarn build
+      #       yarn start
